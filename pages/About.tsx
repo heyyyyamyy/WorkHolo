@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Target, Eye, Globe } from 'lucide-react';
+import { Target, Eye } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
 const About: React.FC = () => {
