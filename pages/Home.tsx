@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { Logo } from '../components/Logo';
 import { 
   ArrowRight, 
   MessageSquare, 
@@ -54,12 +55,8 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/20 border border-blue-800 text-blue-400 text-sm font-semibold mb-8 animate-fade-in-up">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                WorkHolo 2.0 is now live
+              <div className="inline-flex items-center justify-center mb-8 animate-fade-in-up">
+                <Logo className="w-40 h-40 drop-shadow-[0_0_16px_rgba(59,130,246,0.35)]" />
               </div>
               <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-tight">
                 WorkHolo — The Future of <br className="hidden md:block"/>
