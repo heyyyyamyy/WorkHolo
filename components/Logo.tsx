@@ -4,7 +4,7 @@ interface LogoProps {
   className?: string;
 }
 
-const logoSrc = '/workholo_logo.svg';
+const logoSrc = '/workholo logo.png';
 
 export const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10" }) => {
   return (
