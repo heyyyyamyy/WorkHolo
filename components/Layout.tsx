@@ -94,7 +94,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <Logo />
               </div>
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
-                WorkHolo 2.0
+                WorkHolo
               </span>
             </Link>
 
@@ -181,7 +181,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="w-8 h-8">
                   <Logo />
                 </div>
-                <span className="text-xl font-bold">WorkHolo 2.0</span>
+                <span className="text-xl font-bold">WorkHolo</span>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Revolutionizing team collaboration for the modern enterprise. 
