@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Globe, Mail, Twitter, Linkedin, Github } from 'lucide-react';
+import { Menu, X, Mail, Twitter, Linkedin, Github } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -88,9 +89,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-900/20 transform group-hover:rotate-12 transition-transform duration-300">
-                <Globe size={24} />
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 transform group-hover:rotate-12 transition-transform duration-300">
+                <Logo />
               </div>
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
                 WorkHolo
@@ -177,8 +178,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center text-white">
-                  <Globe size={20} />
+                <div className="w-8 h-8">
+                  <Logo />
                 </div>
                 <span className="text-xl font-bold">WorkHolo</span>
               </div>
