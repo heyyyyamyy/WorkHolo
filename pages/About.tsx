@@ -21,6 +21,13 @@ const About: React.FC = () => {
             </p>
           </ScrollReveal>
           
+          <ScrollReveal delay={150}>
+            <h2 className="text-3xl font-bold text-white mb-6">Our Parent Company</h2>
+            <p className="mb-6">
+              WorkHolo is proudly owned and developed by <strong className="text-white">Avanya Infotech</strong>, a forward-thinking technology company committed to delivering cutting-edge solutions that empower businesses and enhance productivity. Founded with a vision to bridge the gap between technology and human collaboration, Avanya Infotech has been at the forefront of innovation, creating tools that make work more efficient and enjoyable.
+            </p>
+          </ScrollReveal>
+          
           <div className="grid md:grid-cols-2 gap-12 my-16">
             <ScrollReveal delay={200}>
               <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 h-full">
@@ -58,6 +65,26 @@ const About: React.FC = () => {
             <p className="mb-6">
               We believe in "Invisible Technology". The best tools get out of the way. WorkHolo is designed to be powerful yet unobtrusive, ensuring your team focuses on the work, not the tool.
             </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={550}>
+            <h2 className="text-3xl font-bold text-white mb-6">Our Journey</h2>
+            <p className="mb-6">
+              From humble beginnings, WorkHolo emerged as a response to the growing need for better remote collaboration tools. Our team at Avanya Infotech recognized the challenges faced by distributed teams and set out to create a platform that not only connects people but also enhances their productivity and creativity.
+            </p>
+            <p className="mb-6">
+              Through continuous innovation and user feedback, we've evolved WorkHolo into a comprehensive workspace solution that integrates seamlessly with existing workflows, providing AI-powered insights, real-time collaboration, and advanced security features to ensure your team's success in an ever-changing digital landscape.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={575}>
+            <h2 className="text-3xl font-bold text-white mb-6">Our Core Values</h2>
+            <ul className="list-disc list-inside mb-6 space-y-2">
+              <li><strong className="text-white">Innovation:</strong> Constantly pushing boundaries to deliver cutting-edge solutions.</li>
+              <li><strong className="text-white">Collaboration:</strong> Fostering teamwork and open communication in everything we do.</li>
+              <li><strong className="text-white">Security:</strong> Ensuring the highest standards of data protection and privacy.</li>
+              <li><strong className="text-white">User-Centric:</strong> Designing with our users' needs at the forefront.</li>
+            </ul>
           </ScrollReveal>
         </div>
 

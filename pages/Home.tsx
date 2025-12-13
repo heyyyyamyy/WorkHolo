@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Logo } from '../components/Logo';
-import { 
-  ArrowRight, 
-  MessageSquare, 
-  Shield, 
-  Zap, 
-  Users, 
-  Layout, 
-  Smartphone, 
+import {
+  ArrowRight,
+  MessageSquare,
+  Shield,
+  Zap,
+  Users,
+  Layout,
+  Smartphone,
   Code,
   Globe,
   Briefcase,
@@ -18,7 +18,10 @@ import {
   Database,
   Lock,
   CheckCircle2,
-  Server
+  Server,
+  Activity,
+  HardDrive,
+  Award
 } from 'lucide-react';
 import { Testimonial } from '../types';
 import ScrollReveal from '../components/ScrollReveal';
@@ -47,35 +50,40 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="overflow-hidden bg-gray-950 text-slate-200">
+    <div className="overflow-hidden black-gradient-bg text-slate-200">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gray-950 overflow-hidden">
-        {/* Dark theme radial gradient */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-gray-950 to-gray-950 pointer-events-none"></div>
+      <section className="relative py-20 lg:py-32 black-radial-bg overflow-hidden pattern-overlay">
+        {/* Enhanced gradient layers */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/10 via-transparent to-indigo-900/10 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-purple-900/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute inset-0 floating-particles"></div>
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center justify-center mb-8 animate-fade-in-up">
-                <Logo className="w-40 h-40 drop-shadow-[0_0_16px_rgba(59,130,246,0.35)]" />
+                <div className="relative">
+                  <Logo className="w-40 h-40 drop-shadow-[0_0_16px_rgba(59,130,246,0.35)] animate-glow" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-full blur-xl animate-pulse"></div>
+                </div>
               </div>
               <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 leading-tight">
                 WorkHolo — The Future of <br className="hidden md:block"/>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">Team Communication.</span>
               </h1>
-              <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                A unified workspace where teams connect, collaborate, and communicate effortlessly. 
+              <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed text-justify">
+                A unified workspace where teams connect, collaborate, and communicate effortlessly.
                 Designed for modern enterprises that demand speed and security.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button 
+                <button
                   onClick={handleDemoRequest}
-                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-blue-900/20 transition-all transform hover:-translate-y-1"
+                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-blue-900/20 transition-all transform hover:-translate-y-1 hover-glow"
                 >
                   Request a Demo
                 </button>
-                <Link 
+                <Link
                   to="/features"
-                  className="w-full sm:w-auto px-8 py-4 bg-transparent text-white border border-slate-700 font-bold rounded-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-4 bg-transparent text-white border border-slate-700 font-bold rounded-xl hover:bg-slate-800 transition-all flex items-center justify-center gap-2 hover-glow"
                 >
                   Explore Features
                   <ArrowRight size={18} />
@@ -138,7 +146,8 @@ const Home: React.FC = () => {
       </section>
 
       {/* Client Logos */}
-      <section className="py-12 bg-gray-950 border-y border-gray-800">
+      <section className="py-12 black-gradient-bg border-y border-gray-800/50 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-900/20 to-transparent"></div>
         <ScrollReveal>
           <div className="container mx-auto px-4">
             <p className="text-center text-slate-500 font-medium mb-8">TRUSTED BY INNOVATIVE TEAMS</p>
@@ -155,29 +164,34 @@ const Home: React.FC = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-16 bg-gray-900/50 border-b border-gray-800">
+      <section className="py-16 bg-gradient-to-b from-gray-900/50 to-gray-950 border-b border-gray-800/50 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(30,64,175,0.05)_0%,_transparent_70%)]"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
              <ScrollReveal delay={0} width="auto" className="w-full">
-               <div className="p-4">
+               <div className="p-4 hover-scale transition-transform">
+                  <Users className="w-8 h-8 text-blue-500 mx-auto mb-2" />
                   <div className="text-4xl font-extrabold text-blue-500 mb-2">10k+</div>
                   <div className="text-slate-400 font-medium">Enterprise Teams</div>
                </div>
              </ScrollReveal>
              <ScrollReveal delay={100} width="auto" className="w-full">
-               <div className="p-4">
+               <div className="p-4 hover-scale transition-transform">
+                  <Activity className="w-8 h-8 text-indigo-500 mx-auto mb-2" />
                   <div className="text-4xl font-extrabold text-indigo-500 mb-2">99.99%</div>
                   <div className="text-slate-400 font-medium">Uptime Guarantee</div>
                </div>
              </ScrollReveal>
              <ScrollReveal delay={200} width="auto" className="w-full">
-               <div className="p-4">
+               <div className="p-4 hover-scale transition-transform">
+                  <HardDrive className="w-8 h-8 text-purple-500 mx-auto mb-2" />
                   <div className="text-4xl font-extrabold text-purple-500 mb-2">500TB</div>
                   <div className="text-slate-400 font-medium">Secure Storage</div>
                </div>
              </ScrollReveal>
              <ScrollReveal delay={300} width="auto" className="w-full">
-               <div className="p-4">
+               <div className="p-4 hover-scale transition-transform">
+                  <Award className="w-8 h-8 text-slate-200 mx-auto mb-2" />
                   <div className="text-4xl font-extrabold text-slate-200 mb-2">ISO</div>
                   <div className="text-slate-400 font-medium">27001 Certified</div>
                </div>
@@ -187,18 +201,19 @@ const Home: React.FC = () => {
       </section>
 
       {/* Key Features Preview */}
-      <section className="py-24 bg-gray-950">
+      <section className="py-24 black-gradient-bg relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/50 to-transparent"></div>
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Teams Choose WorkHolo</h2>
-              <p className="text-lg text-slate-400">Build a culture of transparency and speed with tools designed for the future of work.</p>
+              <p className="text-lg text-slate-400 leading-relaxed text-justify">Build a culture of transparency and speed with tools designed for the future of work.</p>
             </div>
           </ScrollReveal>
           
           <div className="grid md:grid-cols-3 gap-8">
             <ScrollReveal delay={0}>
-              <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-900/10 transition-all duration-300 group h-full">
+              <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-900/10 transition-all duration-300 group h-full hover-glow">
                 <div className="w-14 h-14 bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                   <MessageSquare size={28} />
                 </div>
@@ -209,7 +224,7 @@ const Home: React.FC = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={150}>
-              <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-900/10 transition-all duration-300 group h-full">
+              <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-900/10 transition-all duration-300 group h-full hover-glow">
                 <div className="w-14 h-14 bg-indigo-900/30 rounded-xl flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition-transform">
                   <Shield size={28} />
                 </div>
@@ -220,7 +235,7 @@ const Home: React.FC = () => {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={300}>
-              <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-900/10 transition-all duration-300 group h-full">
+              <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-900/10 transition-all duration-300 group h-full hover-glow">
                 <div className="w-14 h-14 bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
                   <Zap size={28} />
                 </div>
@@ -235,22 +250,23 @@ const Home: React.FC = () => {
       </section>
 
       {/* Use Cases / Workflows */}
-      <section className="py-24 bg-gray-900 relative">
-         {/* Background pattern */}
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+      <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-950 relative">
+          {/* Enhanced background pattern */}
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-900/5 via-transparent to-indigo-900/5"></div>
          
         <div className="container mx-auto px-4 relative z-10">
            <ScrollReveal>
              <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Built for Every Department</h2>
-                <p className="text-lg text-slate-400">WorkHolo adapts to the unique workflows of your entire organization.</p>
+                <p className="text-lg text-slate-400 leading-relaxed text-justify">WorkHolo adapts to the unique workflows of your entire organization.</p>
              </div>
            </ScrollReveal>
            
            <div className="grid md:grid-cols-3 gap-8">
               {/* Engineering */}
               <ScrollReveal delay={0}>
-                <div className="bg-gray-950 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-blue-500/50 transition-colors group h-full">
+                <div className="bg-gray-950 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-blue-500/50 transition-colors group h-full hover-glow">
                    <div className="w-12 h-12 bg-blue-900/20 rounded-lg flex items-center justify-center text-blue-500 mb-6">
                       <Cpu size={24} />
                    </div>
@@ -274,7 +290,7 @@ const Home: React.FC = () => {
 
               {/* Sales */}
               <ScrollReveal delay={150}>
-                <div className="bg-gray-950 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-indigo-500/50 transition-colors group h-full">
+                <div className="bg-gray-950 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-indigo-500/50 transition-colors group h-full hover-glow">
                    <div className="w-12 h-12 bg-indigo-900/20 rounded-lg flex items-center justify-center text-indigo-500 mb-6">
                       <Briefcase size={24} />
                    </div>
@@ -298,7 +314,7 @@ const Home: React.FC = () => {
 
               {/* Leadership */}
               <ScrollReveal delay={300}>
-                <div className="bg-gray-950 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-purple-500/50 transition-colors group h-full">
+                <div className="bg-gray-950 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-purple-500/50 transition-colors group h-full hover-glow">
                    <div className="w-12 h-12 bg-purple-900/20 rounded-lg flex items-center justify-center text-purple-500 mb-6">
                       <Server size={24} />
                    </div>
@@ -324,9 +340,10 @@ const Home: React.FC = () => {
       </section>
 
       {/* Integration Section */}
-      <section className="py-24 bg-gray-950 overflow-hidden">
+      <section className="py-24 black-gradient-bg overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-l from-gray-950/50 to-transparent"></div>
          <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-16">
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 animate-slide-in-left">
                <ScrollReveal>
                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/20 text-blue-400 text-xs font-bold mb-6 uppercase tracking-wider border border-blue-900/30">
                     Integrations
@@ -334,23 +351,23 @@ const Home: React.FC = () => {
                  <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                     Works with your favorite tools
                  </h2>
-                 <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                 <p className="text-lg text-slate-400 mb-8 leading-relaxed text-justify">
                     Connect WorkHolo with the apps you use every day. Centralize your notifications, files, and updates in one secure location.
                  </p>
                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors">
+                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors hover-glow">
                        <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">J</div>
                        <span className="font-semibold text-slate-300">Jira</span>
                     </div>
-                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors">
+                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors hover-glow">
                        <div className="w-10 h-10 bg-black border border-gray-700 rounded-lg flex items-center justify-center text-white font-bold">G</div>
                        <span className="font-semibold text-slate-300">GitHub</span>
                     </div>
-                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors">
+                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors hover-glow">
                        <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center text-white font-bold">D</div>
                        <span className="font-semibold text-slate-300">Drive</span>
                     </div>
-                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors">
+                    <div className="flex items-center gap-3 p-4 rounded-xl border border-gray-800 bg-gray-900 hover:bg-gray-800 transition-colors hover-glow">
                        <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center text-white font-bold">Z</div>
                        <span className="font-semibold text-slate-300">Zoom</span>
                     </div>
@@ -362,7 +379,7 @@ const Home: React.FC = () => {
                  </div>
                </ScrollReveal>
             </div>
-            <div className="md:w-1/2 relative">
+            <div className="md:w-1/2 relative animate-slide-in-right">
                <ScrollReveal delay={200}>
                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-700 opacity-20 blur-3xl rounded-full"></div>
                  <div className="relative bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl p-8 transform rotate-y-6 hover:rotate-y-0 transition-transform duration-500 perspective-1000">
@@ -409,14 +426,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* Security Banner */}
-      <section className="py-20 bg-gray-900 border-t border-gray-800 text-white relative overflow-hidden">
-         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-gray-950 border-t border-gray-800/50 text-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-950/30 to-transparent"></div>
          <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-               <div className="lg:w-1/2">
+               <div className="lg:w-1/2 animate-slide-in-left">
                   <ScrollReveal>
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">Enterprise-Grade Security</h2>
-                    <p className="text-slate-400 text-lg mb-8">
+                    <p className="text-slate-400 text-lg mb-8 leading-relaxed text-justify">
                        We take data protection seriously. WorkHolo is built with a security-first architecture to keep your proprietary information safe.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -439,9 +457,9 @@ const Home: React.FC = () => {
                     </div>
                   </ScrollReveal>
                </div>
-               <div className="lg:w-5/12">
+               <div className="lg:w-5/12 animate-slide-in-right">
                   <ScrollReveal delay={200}>
-                    <div className="bg-gray-950 p-8 rounded-2xl border border-gray-800 shadow-2xl shadow-blue-900/10 hover:transform hover:scale-105 transition-transform duration-500">
+                    <div className="bg-gray-950 p-8 rounded-2xl border border-gray-800 shadow-2xl shadow-blue-900/10 hover:transform hover:scale-105 transition-transform duration-500 hover-glow">
                        <div className="flex items-center justify-between mb-8">
                           <span className="text-slate-500 font-mono text-sm">SECURITY STATUS</span>
                           <span className="flex items-center gap-2 text-green-400 text-sm font-bold">
@@ -486,11 +504,12 @@ const Home: React.FC = () => {
       </section>
 
       {/* Custom Development Highlight */}
-      <section className="py-20 bg-gray-950 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-900/10 rounded-l-full blur-3xl pointer-events-none opacity-50"></div>
+      <section className="py-20 black-gradient-bg relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-900/15 to-transparent rounded-l-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-indigo-900/10 to-transparent rounded-r-full blur-3xl pointer-events-none"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 animate-slide-in-left">
               <ScrollReveal>
                 <div className="inline-block px-4 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm font-semibold mb-6 border border-blue-800/50">
                   For Enterprise Needs
@@ -498,7 +517,7 @@ const Home: React.FC = () => {
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-white">
                   Custom App Development <br/> for Your Business
                 </h2>
-                <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                <p className="text-slate-400 text-lg mb-8 leading-relaxed text-justify">
                   Need more than just a platform? Our engineering team builds custom mobile and web applications tailored to your specific operational requirements.
                 </p>
                 <ul className="space-y-4 mb-8">
@@ -523,9 +542,9 @@ const Home: React.FC = () => {
                 </Link>
               </ScrollReveal>
             </div>
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 animate-slide-in-right">
                <ScrollReveal delay={200}>
-                 <div className="relative rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 p-8 shadow-2xl">
+                 <div className="relative rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 p-8 shadow-2xl hover-glow">
                     {/* Abstract code representation */}
                     <div className="space-y-3 font-mono text-sm">
                       <div className="flex gap-2">
@@ -571,7 +590,8 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-950 border-t border-gray-800">
+      <section className="py-20 black-gradient-bg border-t border-gray-800/50 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-950/20"></div>
          <div className="container mx-auto px-4">
             <ScrollReveal>
               <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
@@ -581,7 +601,7 @@ const Home: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((t, i) => (
                 <ScrollReveal key={i} delay={i * 100}>
-                  <div className="bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-gray-700 transition-colors flex flex-col justify-between h-full">
+                  <div className="bg-gray-900 p-8 rounded-2xl shadow-sm border border-gray-800 hover:border-gray-700 transition-colors flex flex-col justify-between h-full hover-glow">
                     <div className="mb-6 text-blue-500">
                       <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.01691 21L5.01691 18C5.01691 16.8954 5.91234 16 7.01691 16H10.0169C10.5692 16 11.0169 15.5523 11.0169 15V9C11.0169 8.44772 10.5692 8 10.0169 8H6.01691C5.46462 8 5.01691 8.44772 5.01691 9V11C5.01691 11.5523 4.56919 12 4.01691 12H3.01691V5H13.0169V15C13.0169 18.3137 10.3306 21 7.01691 21H5.01691Z" />
@@ -599,18 +619,20 @@ const Home: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gray-950">
+      <section className="py-20 black-gradient-bg relative pattern-overlay">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/50 to-transparent"></div>
+        <div className="absolute inset-0 floating-particles opacity-50"></div>
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <div className="bg-gradient-to-r from-blue-700 to-indigo-800 rounded-3xl p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-900/20 border border-blue-800">
                <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                <h2 className="text-4xl md:text-5xl font-bold mb-6 relative z-10">Ready to transform your workflow?</h2>
-               <p className="text-blue-100 text-xl mb-10 max-w-2xl mx-auto relative z-10">
+               <p className="text-blue-100 text-xl mb-10 max-w-2xl mx-auto relative z-10 leading-relaxed text-justify">
                  Join the forward-thinking companies building the future with WorkHolo.
                </p>
-               <button 
+               <button
                   onClick={handleDemoRequest}
-                  className="px-10 py-4 bg-white text-blue-900 font-bold rounded-full shadow-lg hover:bg-slate-100 transition-all transform hover:-translate-y-1 relative z-10"
+                  className="px-10 py-4 bg-white text-blue-900 font-bold rounded-full shadow-lg hover:bg-slate-100 transition-all transform hover:-translate-y-1 relative z-10 hover-glow"
                 >
                   Request a Demo
                 </button>

@@ -37,6 +37,147 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    /* Enhanced black gradient backgrounds */
+    .black-gradient-bg {
+      background: linear-gradient(135deg, #030712 0%, #0f172a 25%, #1e293b 50%, #0f172a 75%, #030712 100%);
+    }
+
+    .black-radial-bg {
+      background: radial-gradient(ellipse at center, rgba(30, 64, 175, 0.15) 0%, rgba(15, 23, 42, 0.8) 50%, #030712 100%);
+    }
+
+    /* Custom animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .animate-glow {
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+
+    /* Enhanced hover effects */
+    .hover-glow {
+      transition: all 0.3s ease;
+    }
+
+    .hover-glow:hover {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(99, 102, 241, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+
+    /* Typography improvements */
+    .text-justify {
+      text-align: justify;
+    }
+
+    .leading-relaxed {
+      line-height: 1.75;
+    }
+
+    /* Additional UI details */
+    .pattern-overlay {
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.1) 2px, transparent 2px);
+      background-size: 50px 50px;
+    }
+
+    .floating-particles::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, rgba(147, 51, 234, 0.3) 1px, transparent 1px);
+      background-size: 100px 100px, 150px 150px, 200px 200px;
+      animation: float 20s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      33% {
+        transform: translateY(-10px) rotate(120deg);
+      }
+
+      66% {
+        transform: translateY(10px) rotate(240deg);
+      }
+    }
   </style>
   <script type="importmap">
 {
