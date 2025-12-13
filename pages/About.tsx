@@ -13,7 +13,6 @@ import {
   CheckCircle2,
   ArrowRight,
   Building2,
-  Calendar,
   Star,
   Globe,
   Code
